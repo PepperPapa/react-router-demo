@@ -7,7 +7,8 @@ class App extends Component {
     return (
       <Router history={hashHistory}>
         <Route path="/" component={Home}/>
-	<Route path="/address" component={Address} />
+	      <Route path="/address" component={Address} />
+        <Route path="*" component={NotFound} />
       </Router>
     );
   }
@@ -15,5 +16,6 @@ class App extends Component {
 
 const Home = () => <h1>hello from home!</h1>
 const Address = () => <h1>we are loacted at 555 Jackson St.</h1>
+const NotFound = () => <h1>404.. This page is not found!</h1>
 
 export default App;
