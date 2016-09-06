@@ -6,9 +6,11 @@ class App extends Component {
   render() {
     return (
       <Router history={hashHistory}>
-        <Route path="/" component={Home}/>
-	      <Route path="/address" component={Address} />
-        <Route path="*" component={NotFound} />
+        <Route path="/" component={Container}>
+          <IndexRoute component={Home} />
+  	      <Route path="/address" component={Address} />
+          <Route path="*" component={NotFound} />
+        </Route>
       </Router>
     );
   }
@@ -17,5 +19,17 @@ class App extends Component {
 const Home = () => <h1>hello from home!</h1>
 const Address = () => <h1>we are loacted at 555 Jackson St.</h1>
 const NotFound = () => <h1>404.. This page is not found!</h1>
+const Container = (props) => (
+  <div>
+    <Nav />
+    {props.children}
+  </div>
+);
+const Nav = () => (
+  <div>
+    <Link to="/">Home</Link>&nbsp;
+    <Link to="/address">Address</Link>
+  </div>
+);
 
 export default App;
