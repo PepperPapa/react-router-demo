@@ -40,9 +40,9 @@ const Container = (props) => (
 );
 const Nav = () => (
   <div>
-    <Link onlyActiveOnIndex activeStyle={{color: '#53acff'}} to="/">Home</Link>&nbsp;
-    <Link activeStyle={{color: '#53acff'}} to="/address">Address</Link>&nbsp;
-    <Link activeStyle={{color: '#53acff'}} to="/about">About</Link>
+    <IndexLink activeClassName="active" to="/">Home</IndexLink>&nbsp;
+    <IndexLink activeClassName="active" to="/address">Address</IndexLink>&nbsp;
+    <IndexLink activeClassName="active" to="/about">About</IndexLink>
   </div>
 );
 
