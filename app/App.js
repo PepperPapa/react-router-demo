@@ -12,7 +12,7 @@ class App extends Component {
             <IndexRoute component={TwitterFeed} />
             <Route path="instagram" component={Instagram} />
           </Route>
-          <Route path="/about" component={About} />
+          <Route path="/about(/:name)" component={About} />
           <Route path="/namedComponent" component={NamedComponents}>
             <IndexRoute components={{title: Title, subTitle: SubTitle}} />
           </Route>
@@ -33,7 +33,12 @@ const Address = (props) => <div>
   <h1>we are loacted at 555 Jackson St.</h1>
   {props.children}
 </div>
-const About = ()  => <h1>About Page</h1>
+const About = (props)  => (
+  <div>
+    <h3>Welcome to the About Page</h3>
+    {props.params.name && <h2>Helo, {props.params.name}</h2>}
+  </div>
+);
 const NotFound = () => <h1>404.. This page is not found!</h1>
 const Container = (props) => (
   <div>
